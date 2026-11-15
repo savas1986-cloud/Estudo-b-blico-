@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#C87D6B"/>
+  <g transform="translate(256 262) scale(.78) translate(-256 -262)">
+  <!-- capa do livro -->
+  <path d="M84 318 C150 290 214 292 256 318 C298 292 362 290 428 318 L428 424 C362 400 298 402 256 428 C214 402 150 400 84 424 Z" fill="#EBDDD0"/>
+  <!-- páginas -->
+  <path d="M100 300 C156 274 214 276 252 302 L252 410 C214 386 156 384 100 408 Z" fill="#FAF8F5"/>
+  <path d="M260 302 C298 276 356 274 412 300 L412 408 C356 384 298 386 260 410 Z" fill="#FAF8F5"/>
+  <!-- linhas do texto -->
+  <g stroke="#E6C3B7" stroke-width="7" stroke-linecap="round" fill="none">
+    <path d="M128 324 C160 312 196 312 226 324"/><path d="M128 350 C160 338 196 338 226 350"/><path d="M128 376 C160 364 196 364 226 376"/>
+    <path d="M286 324 C316 312 352 312 384 324"/><path d="M286 350 C316 338 352 338 384 350"/><path d="M286 376 C316 364 352 364 384 376"/>
+  </g>
+  <!-- ramo de oliveira -->
+  <path d="M256 296 C256 236 268 176 304 112" stroke="#FAF8F5" stroke-width="9" stroke-linecap="round" fill="none"/>
+  <g fill="#FAF8F5">
+    <path d="M0 0 C18 -22 62 -22 82 0 C62 22 18 22 0 0 Z" transform="translate(258 252) rotate(-28)"/>
+    <path d="M0 0 C18 -22 62 -22 82 0 C62 22 18 22 0 0 Z" transform="translate(259 236) rotate(-152)"/>
+    <path d="M0 0 C16 -19 54 -19 72 0 C54 19 16 19 0 0 Z" transform="translate(272 182) rotate(-38)"/>
+    <path d="M0 0 C16 -19 54 -19 72 0 C54 19 16 19 0 0 Z" transform="translate(276 168) rotate(-160)"/>
+    <path d="M0 0 C14 -16 46 -16 62 0 C46 16 14 16 0 0 Z" transform="translate(304 112) rotate(-62)"/>
+  </g>
+  <g stroke="#C87D6B" stroke-width="3" stroke-linecap="round" opacity=".55">
+    <path d="M262 250 L322 218" /><path d="M255 238 L190 202"/><path d="M276 180 L326 148"/><path d="M272 167 L212 147"/>
+  </g>
+  <path d="M256 266 C248 266 240 270 236 276" stroke="#FAF8F5" stroke-width="4" fill="none" stroke-linecap="round"/><ellipse cx="231" cy="283" rx="10" ry="12" fill="#FAF8F5"/>
+  </g>
+</svg>
