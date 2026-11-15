@@ -1,36 +1,41 @@
-# Raízes & Graça — PWA
+# Raízes & Graça — PWA com Comunidade online
 
-Arquivos:
-- `index.html` — o app completo (Bíblia Livre embutida) com meta tags PWA e registro do Service Worker
-- `manifest.json` — nome, cores, ícones e atalhos do app instalado
-- `sw.js` — Service Worker: funciona offline e abre instantaneamente
-- `icons/` — ícone SVG (Bíblia com ramo de oliveira) e PNGs para Android, iPhone e favicon
+## Arquivos
+- `index.html` — o app completo (Bíblia Livre embutida)
+- `config.js` — **onde você cola os dados do Supabase** (único arquivo que você edita)
+- `supabase.sql` — cria o banco da comunidade com as regras de segurança
+- `manifest.json`, `sw.js`, `icons/` — instalação como app e modo offline
+- `vercel.json` — cabeçalhos corretos para a Vercel
 
-## Como publicar
-O PWA precisa de **HTTPS**. Qualquer hospedagem de site estático gratuita serve:
-- **Netlify Drop**: arraste esta pasta em app.netlify.com/drop
-- **GitHub Pages**: suba a pasta num repositório e ative Pages
-- **Vercel / Cloudflare Pages**: importe a pasta como site estático
+## Ativar a Comunidade (uma vez, ~10 minutos)
+1. Crie uma conta grátis em **supabase.com** → **New project** (região: São Paulo / sa-east-1).
+2. Menu **SQL Editor** → **New query** → cole todo o conteúdo de `supabase.sql` → **Run**.
+3. Menu **Authentication → Sign In / Providers** (ou *Settings*) → ligue **Allow anonymous sign-ins** → Save.
+4. Menu **Project Settings → API** (ou *Data API*): copie **Project URL** e a chave **anon / public**.
+5. Abra `config.js` e cole os dois valores entre as aspas.
+6. Publique a pasta na Vercel (preset **Other**, sem build). Pronto!
 
-Mantenha todos os arquivos juntos na mesma pasta (o app funciona também em subpastas).
+> A chave **anon/public** pode ficar no site. Nunca use a chave **service_role**.
 
-## Publicando na Vercel (importante)
-- Envie a pasta inteira (index.html, manifest.json, sw.js, vercel.json e icons/) **na raiz** do projeto.
-  Framework Preset: **Other** · sem build command · Output Directory: `.`
-- Instale pelo endereço de **produção** (`seu-projeto.vercel.app`). Os links de *preview*
-  vêm com "Vercel Authentication" ligada: o Chrome baixa o manifest sem login, recebe a tela
-  de login da Vercel (ícone triangular) e mostra "Não é possível instalar o app".
-  Para usar previews: Settings → Deployment Protection → desative a proteção.
-- Teste: abra `https://seu-projeto.vercel.app/manifest.json` numa aba anônima. Se aparecer o JSON, está certo.
+## Como as amigas participam
+- Cada uma abre o link do app (e instala, se quiser) e vai em **Comunidade**.
+- Quem cria o grupo toca em **Convidar** → o convite com o código vai para o WhatsApp.
+- As outras tocam em **Entrar com código**, digitam o código e o nome.
+- Não precisa de e-mail nem senha. Se alguém trocar de celular ou limpar o navegador,
+  é só entrar de novo com o código (os pedidos antigos continuam no grupo).
 
-## Como instalar
-- **Android (Chrome):** abra o site → aparece o convite "Instalar" (ou menu ⋮ → Instalar app).
-- **iPhone (Safari):** abra o site → Compartilhar → Adicionar à Tela de Início.
+## Segurança e moderação
+- Só quem tem o código vê o grupo; ninguém consegue listar grupos de outras pessoas.
+- Cada uma só apaga o que ela mesma publicou.
+- A **criadora do grupo** pode apagar qualquer pedido/partilha, remover participantes e excluir o grupo.
+- Grifos, anotações, respostas dos estudos e plano de leitura continuam **só no aparelho** de cada uma.
+
+## Publicando na Vercel
+- Envie a pasta inteira na **raiz** do projeto. Framework Preset: **Other**.
+- Instale pelo endereço de **produção** (`seu-projeto.vercel.app`). Links de *preview* têm
+  "Vercel Authentication" e impedem a instalação (Settings → Deployment Protection).
+- Teste: abra `https://seu-projeto.vercel.app/manifest.json` numa aba anônima.
 
 ## Atualizações
-Ao publicar uma nova versão do `index.html`, troque `VERSION` no topo do `sw.js`
-(ex.: `rg-v1.0.1`) para que os aparelhos baixem a versão nova.
-
-## Testar no computador
-    python3 -m http.server 8080
-e abra http://localhost:8080 (o Service Worker também funciona em localhost).
+Ao trocar o `index.html`, mude `VERSION` no topo do `sw.js` (ex.: `rg-v1.1.1`).
+Mudanças só no `config.js` não precisam disso.

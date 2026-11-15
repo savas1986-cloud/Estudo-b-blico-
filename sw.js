@@ -4,7 +4,7 @@
  * - Guarda as fontes do Google em cache após o primeiro acesso.
  * Ao publicar uma nova versão, altere VERSION para forçar a atualização do cache.
  */
-const VERSION = "rg-v1.0.1";
+const VERSION = "rg-v1.1.0";
 const APP_CACHE = `app-${VERSION}`;
 const RUNTIME_CACHE = `runtime-${VERSION}`;
 
@@ -12,6 +12,7 @@ const PRECACHE = [
   "./",
   "./index.html",
   "./manifest.json",
+  "./config.js",
   "./icons/icon.svg",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
@@ -60,6 +61,15 @@ self.addEventListener("fetch", (event) => {
   // Abrir o app (qualquer navegação dentro do escopo) → index.html do cache
   if (request.mode === "navigate" && url.origin === self.location.origin) {
     event.respondWith(staleWhileRevalidate(request, APP_CACHE, "./index.html"));
+    return;
+  }
+
+  // Configuração da comunidade: sempre tenta a versão mais nova primeiro
+  if (url.origin === self.location.origin && url.pathname.endsWith("/config.js")) {
+    event.respondWith(
+      fetch(request).then((res) => { const c = res.clone(); caches.open(APP_CACHE).then((cache) => cache.put(request, c)); return res; })
+        .catch(() => caches.match(request, { ignoreSearch: true }))
+    );
     return;
   }
 
