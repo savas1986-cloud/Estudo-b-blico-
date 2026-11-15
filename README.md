@@ -18,9 +18,9 @@
 > A chave **anon/public** pode ficar no site. Nunca use a chave **service_role**.
 
 ## Como as amigas participam
-- Cada uma abre o link do app (e instala, se quiser) e vai em **Comunidade**.
-- Quem cria o grupo toca em **Convidar** → o convite com o código vai para o WhatsApp.
-- As outras tocam em **Entrar com código**, digitam o código e o nome.
+- Quem cria o grupo toca em **Convidar** → envia o link pelo WhatsApp.
+- A amiga toca no link → o app abre em "Você foi convidada!" com o nome do grupo → ela digita só o nome.
+- Também dá para entrar manualmente: **Comunidade → Entrar com código**.
 - Não precisa de e-mail nem senha. Se alguém trocar de celular ou limpar o navegador,
   é só entrar de novo com o código (os pedidos antigos continuam no grupo).
 
