@@ -14,6 +14,15 @@ O PWA precisa de **HTTPS**. Qualquer hospedagem de site estático gratuita serve
 
 Mantenha todos os arquivos juntos na mesma pasta (o app funciona também em subpastas).
 
+## Publicando na Vercel (importante)
+- Envie a pasta inteira (index.html, manifest.json, sw.js, vercel.json e icons/) **na raiz** do projeto.
+  Framework Preset: **Other** · sem build command · Output Directory: `.`
+- Instale pelo endereço de **produção** (`seu-projeto.vercel.app`). Os links de *preview*
+  vêm com "Vercel Authentication" ligada: o Chrome baixa o manifest sem login, recebe a tela
+  de login da Vercel (ícone triangular) e mostra "Não é possível instalar o app".
+  Para usar previews: Settings → Deployment Protection → desative a proteção.
+- Teste: abra `https://seu-projeto.vercel.app/manifest.json` numa aba anônima. Se aparecer o JSON, está certo.
+
 ## Como instalar
 - **Android (Chrome):** abra o site → aparece o convite "Instalar" (ou menu ⋮ → Instalar app).
 - **iPhone (Safari):** abra o site → Compartilhar → Adicionar à Tela de Início.

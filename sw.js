@@ -4,7 +4,7 @@
  * - Guarda as fontes do Google em cache após o primeiro acesso.
  * Ao publicar uma nova versão, altere VERSION para forçar a atualização do cache.
  */
-const VERSION = "rg-v1.0.0";
+const VERSION = "rg-v1.0.1";
 const APP_CACHE = `app-${VERSION}`;
 const RUNTIME_CACHE = `runtime-${VERSION}`;
 
